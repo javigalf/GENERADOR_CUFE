@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -30,6 +31,8 @@ ALLOWED_HOSTS = []
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3002",
+    "https://www.clikigo.com",
+
     # Agrega otros orígenes si es necesario
 ]
 
@@ -94,14 +97,13 @@ WSGI_APPLICATION = 'consultas_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Datos_cufe', 
-        'USER': 'mauricio.carbono',
-        'PASSWORD': 'T3nT3n$2023',
-        'HOST': '192.168.101.17',
-        'PORT': '3306',
+        'NAME': 'clikigoc_Datos_cufe',  # Nombre de tu base de datos
+        'USER': 'clikigoc_javier2024g',  # Usuario creado en Hostinger
+        'PASSWORD': 'Tomate2029**',  # Contraseña del usuario
+        'HOST': 'mysql.hostinger.com',  # O el host que te hayan indicado
+        'PORT': '3306',  # Puerto predeterminado para MySQL
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
